@@ -1,0 +1,93 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+
+@Component({
+  selector: 'app-material-demo',
+  standalone: true,
+  imports: [
+    CommonModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
+    MatSlideToggleModule,
+    MatProgressBarModule,
+    MatListModule,
+    MatDividerModule,
+  ],
+  template: `
+    <div class="p-6">
+      <h2 class="text-2xl font-bold mb-6">Angular Material Components</h2>
+
+      <!-- Buttons Section -->
+      <mat-card class="mb-6">
+        <mat-card-header>
+          <mat-card-title>Buttons</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="flex gap-3 flex-wrap">
+            <button mat-raised-button color="primary">Raised Primary</button>
+            <button mat-raised-button color="accent">Raised Accent</button>
+            <button mat-flat-button color="warn">Flat Warn</button>
+            <button mat-stroked-button>Stroked</button>
+            <button mat-icon-button>
+              <mat-icon>favorite</mat-icon>
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- Toggle & Progress Section -->
+      <mat-card class="mb-6">
+        <mat-card-header>
+          <mat-card-title>Form Controls</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="flex items-center gap-4 mb-4">
+            <span>Enable Notifications:</span>
+            <mat-slide-toggle color="primary"></mat-slide-toggle>
+          </div>
+          <div class="space-y-2">
+            <p class="text-sm">Progress:</p>
+            <mat-progress-bar mode="determinate" value="75"></mat-progress-bar>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- List Section -->
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>List Example</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-list>
+            <mat-list-item>
+              <mat-icon matListItemIcon>star</mat-icon>
+              <div matListItemTitle>Feature One</div>
+              <div matListItemLine>Easy to use and implement</div>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+              <mat-icon matListItemIcon>build</mat-icon>
+              <div matListItemTitle>Feature Two</div>
+              <div matListItemLine>Fully customizable components</div>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+              <mat-icon matListItemIcon>check_circle</mat-icon>
+              <div matListItemTitle>Feature Three</div>
+              <div matListItemLine>Material Design 3 system</div>
+            </mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  `,
+})
+export class MaterialDemoComponent {}
