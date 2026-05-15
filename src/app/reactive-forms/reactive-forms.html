@@ -1,0 +1,43 @@
+<form
+[formGroup]="myForm" (ngSubmit)="onSubmit()"
+>
+
+<div class="grid grid-col-3 ">
+<label for="name" >Name:</label>
+ 
+
+
+<input class="border w-32 gap-4" id="name" type="text" formControlName="name"  >
+</div>
+
+{{ text}}
+
+<div class="grid grid-col-3 ">
+<label for="email" >Email:</label>
+
+<input class="border w-32 gap-4" id="email" type="email" formControlName="email">
+</div>
+
+<div class="grid grid-col-3">
+  <label for="password" >Password:</label>
+ 
+  <input class="border w-32 gap-4" id="password" type="password" formControlName="password">
+</div>
+
+
+
+<button type="submit" class="bg-blue-500 text-white px-4 py-2 mt-4 rounded" >
+  Submit
+</button>
+
+<div formArrayName="skills" class="mt-4">
+  <label>Skills:</label>
+  <div *ngFor="let skill of skills.controls; let i = index" class="flex items-center gap-2 mt-2">
+    <input [formControlName]="i" class="border w-32 gap-4" placeholder="Enter skill">
+    <button type="button" (click)="removeSkill(i)" class="bg-red-500 text-white px-2 py-1 rounded">Remove</button>
+  </div>
+  <button type="button" (click)="addSkill()" class="bg-green-500 text-white px-4 py-2 mt-4 rounded">Add Skill</button>
+</div>
+
+
+</form>

@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
 import { CombinedDemoComponent } from './components/combined-demo.component';
+import { HeaderComponent } from './header/header';
+import { ReactiveForms } from './reactive-forms/reactive-forms';
+import { Users } from './users/users';
 
 @Component({
+  standalone: true,
   selector: 'app-root',
-  imports: [CombinedDemoComponent],
+  imports: [CombinedDemoComponent, HeaderComponent, ReactiveForms, Users],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
-export class App {}
+export class App {
+
+}

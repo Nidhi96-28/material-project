@@ -1,0 +1,26 @@
+<!-- <div>
+  <input [(ngModel)]="searchText" class="border mt-4" />
+
+  <ul *ngIf="searchText">
+    <li *ngFor="let user of users">
+      <span
+        *ngIf="
+          searchText &&
+          user.name.toLowerCase().includes(searchText.toLowerCase())
+        "
+      >
+        {{ user.name }}</span>
+    </li>
+  </ul>
+</div> -->
+
+
+<div>
+  <input type="text" [ngModel]="searchText()" (ngModelChange)="searchText.set($event)" class="border mt-4" placeholder="search name" />
+
+  <ul>
+    <li *ngFor="let user of filteredUsers()">
+     {{user.name}}
+    </li>
+  </ul>
+</div>
